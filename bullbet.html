@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en" style="font-size: 66.6667px">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <title>Welcome to Bullbet Games</title>
+    <link rel="stylesheet" href="index.css" />
+    <script src="./assets/js/index.js"></script>
+    <script src="./assets/js/vue.js"></script>
+  </head>
+  <body>
+    <div id="container">
+      <div class="logo"></div>
+      <img
+        src="./assets/images/icon_sevice.png"
+        alt=""
+        class="service"
+        @click="goService"
+      />
+      <div class="search">
+        <input
+          v-model="serach"
+          type="text"
+          placeholder="Verify Bullbet URL"
+          class="serach_input"
+        />
+        <div class="btn" @click="handleSearch">
+          <img src="./assets/images/search.png" alt="" /> <span>search</span>
+        </div>
+      </div>
+      <div class="text1">
+        <p>
+          Bullbet <img src="./assets/images/huizang.png" alt="" /> Bullbet Games
+          Official
+        </p>
+        <p>Official Link 2024 Unlocked</p>
+      </div>
+      <div id="list">
+        <div class="item">
+          <div class="index"><span>1</span></div>
+          <div class="href">Bullbet5.in</div>
+          <div class="btn" @click="handleLocation('Bullbet5.in')">
+            Click to visit
+          </div>
+        </div>
+        <div class="item">
+          <div class="index"><span>2</span></div>
+          <div class="href">Bullbet6.in</div>
+          <div class="btn" @click="handleLocation('Bullbet6.in')">
+            Click to visit
+          </div>
+        </div>
+        <div class="item">
+          <div class="index"><span>3</span></div>
+          <div class="href">Bullbet7.in</div>
+          <div class="btn" @click="handleLocation('Bullbet7.in')">
+            Click to visit
+          </div>
+        </div>
+        <div class="item">
+          <div class="index"><span>4</span></div>
+          <div class="href">Bullbet8.in</div>
+          <div class="btn" @click="handleLocation('Bullbet8.in')">
+            Click to visit
+          </div>
+        </div>
+        <div class="item">
+          <div class="index"><span>5</span></div>
+          <div class="href">Bullbet9.in</div>
+          <div class="btn" @click="handleLocation('Bullbet9.in')">
+            Click to visit
+          </div>
+        </div>
+        <div class="item">
+          <div class="index"><span>6</span></div>
+          <div class="href">Bullbet10.in</div>
+          <div class="btn" @click="handleLocation('Bullbet10.in')">
+            Click to visit
+          </div>
+        </div>
+      </div>
+      <div class="text2">
+        <div class="tit">Why should choose Bullbet as an agent?</div>
+        <div class="cnt">
+          AGENT COMMISSION UP TO 1% HIGHEST OF ALL PLATFORMS The first thing
+        </div>
+        <div class="cnt">
+          members need to learn when playing at Bullbet is to know information
+          about it. In this section, we will help you learn about the reasons
+          why you should choose Bullbet as your agent.
+        </div>
+        <div class="tit">Bullbet is a reputable - safety - stabilize</div>
+        <div class="cnt">
+          With completely different professionalism and modern platform.
+          Application Bullbet can confidently ensure reputation and quality for
+          players here. Millions of people have chosen Bullbet, where they can
+          experience many attractive agent programs and high agent commission,
+          popular weekly &amp; monthly bonus.
+        </div>
+        <div class="tit">Secure users' personal information</div>
+        <div class="cnt">
+          When using the service at Bullbet, players will be guaranteed absolute
+          security of personal information. You can completely assured because
+          Bullbet has a engineer system with top security encryption. Along with
+          that is an extremely professional management team to support your
+          agents data security,
+        </div>
+      </div>
+      <div class="text3">
+        <div class="tit">
+          Bullbet agent interface is modern, detailed, simple and smooth
+        </div>
+        <div class="cnt">
+          Bullbet has a smart interface system, scientifically arranged,
+          beautiful and easy to use. Agents can easily observe and search for
+          what they want.
+        </div>
+      </div>
+      <div class="text3">
+        <div class="tit">
+          Bullbet service provides dedicated, professional agent care
+        </div>
+        <div class="cnt">
+          One of the strong advantages of Bullbet is the quality of agent care
+          service. Possessing an extremely excellent staff, undergoing many
+          specialized training programs. therefore, each agent admin has the
+          ability to answer and fix any agent difficult questions as quick as
+          possible. Choose Bullbet Games, You can rest assured to bring you the
+          best service.
+        </div>
+        <div class="tit">
+          Simple instructions for registering as a Bullbet agent
+        </div>
+        <div class="cnt">
+          Besides owning a store of betting games and attractive entertainment
+          services and diverse promotions. Bullbet agent also has many rich
+          agent activities. Whether you are a new or old player, this is a good
+          opportunity to invest, have fun and make extra income. We'll guide you
+          through the basic steps to successfully create a new player account.
+        </div>
+        <div class="tit">Register via the Bullbet website</div>
+        <ul>
+          <li class="cnt_url">
+            •Step 1: Visit the link
+            <a
+              href="https://Bullbet1.in"
+              >Bullbet1.in</a
+            >
+            . Here, select "Promotion"
+          </li>
+          <li class="cnt_url">
+            •Step 2: The system will display “Invitation Link”
+          </li>
+          <li class="cnt_url">
+            •Step 3: Click to copy the invitation link and then send it to your
+            friends to register an account to participate and you have become a
+            Bullbet agent without having to go through any intermediaries.
+          </li>
+        </ul>
+      </div>
+      <div class="mark" v-if="dialogVisble">
+        <div class="box">
+          <img src="./assets/images/error.png" alt="" class="error" />
+          <img
+            src="./assets/images/dialog_logo.png"
+            alt=""
+            class="dialog_logo"
+          />
+          <div class="dialog_text">Please note!</div>
+          <div class="dialog_text_url">{{ serach }}</div>
+          <div class="dialog_text">This site is not verified.</div>
+          <img
+            src="./assets/images/close.png"
+            alt=""
+            class="close"
+            @click="dialogVisble = false"
+          />
+        </div>
+      </div>
+      <!---->
+    </div>
+    <script>
+      // 初始化
+
+      new Vue({
+        el: "#container",
+        data: {
+          list: [
+            { title: "", url: "Bullbet1.in" },
+            { title: "", url: "Bullbet2.in" },
+            { title: "", url: "Bullbet3.in" },
+            { title: "", url: "Bullbet4.in" },
+            { title: "", url: "Bullbet5.in" },
+            { title: "", url: "Bullbet6.in" },
+            { title: "", url: "Bullbet7.in" },
+            { title: "", url: "Bullbet8.in" },
+            { title: "", url: "Bullbet9.in" },
+            { title: "", url: "Bullbet10.in" },
+            { title: "", url: "Bullbet11.in" },
+            { title: "", url: "Bullbet12.in" },
+            { title: "", url: "Bullbet13.in" },
+            { title: "", url: "Bullbet14.in" },
+            { title: "", url: "Bullbet15.in" },
+            { title: "", url: "Bullbet16.in" },
+            { title: "", url: "Bullbet17.in" },
+            { title: "", url: "Bullbet18.in" },
+            { title: "", url: "Bullbet19.in" },
+            { title: "", url: "Bullbet20.in" },
+          ],
+          serach: "",
+          valie: false,
+          dialogVisble: false,
+        },
+        methods: {
+          handleSearch() {
+            if (!this.serach) return;
+            let str = this.serach.replace(/(http:\/\/|https:\/\/|www\.)/g, "");
+            if (
+              !this.list.find(
+                (item) => item.url.toLowerCase() === str.toLowerCase()
+              )
+            ) {
+              this.valie = false;
+            } else {
+              this.valie = true;
+            }
+            this.dialogVisble = true;
+          },
+          handleLocation(url) {
+            window.open("https://" + url);
+          },
+          goService() {
+            // window.location.href =
+            //   "https://tawk.to/chat/65453b01f2439e1631eb778b/1heb6svet";
+          },
+        },
+        computed: {
+          dialogImg() {
+            if (this.valie) {
+              return "./assets/images/success.png";
+            } else {
+              return "./assets/images/error.png";
+            }
+          },
+          dialogText1() {
+            if (this.valie) {
+              return "Bullbet official access address";
+            } else {
+              return "Please note!";
+            }
+          },
+          dialogText2() {
+            if (this.valie) {
+              return "Website has been verified.";
+            } else {
+              return "This site is not verified.";
+            }
+          },
+        },
+      });
+    </script>
+
+    <script>
+      // (function (w, d, s, l, i) {
+      //   w[l] = w[l] || [];
+      //   w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+      //   var f = d.getElementsByTagName(s)[0],
+      //     j = d.createElement(s),
+      //     dl = l != "dataLayer" ? "&l=" + l : "";
+      //   j.async = true;
+      //   j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+      //   f.parentNode.insertBefore(j, f);
+      // })(window, document, "script", "dataLayer", "GTM-MRB2HRPV");
+    </script>
+  </body>
+</html>
